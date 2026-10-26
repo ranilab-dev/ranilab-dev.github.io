@@ -126,6 +126,15 @@
   .works a:hover h3 { color: var(--g1); }
   .works p { color: var(--muted); margin-top: 2px; }
 
+  .sub { font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: 0; margin: 36px 0 10px; }
+  .sub:first-of-type { margin-top: 8px; }
+  .works .static { display: block; padding: 22px 4px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip { font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 980px; background: var(--bg-alt); color: var(--muted); }
+  .chip.idea { background: var(--t1); color: var(--c1); }
+  .chip.prep { background: var(--t3); color: var(--c3); }
+  .chip.team { background: var(--t2); color: var(--c2); }
+
   .contact-link { font-size: 21px; font-weight: 600; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
   .contact-link:hover { color: var(--g2); }
 
@@ -177,20 +186,61 @@
   <section class="block" id="work">
     <div class="wrap">
       <h2>작업</h2>
-      <div class="empty">
-        <strong>첫 작업을 준비하고 있어요</strong>
-        <span class="muted">완성되는 대로 여기에 하나씩 올릴게요.</span>
-      </div>
+
+      <!-- 참여한 프로젝트: <li>...</li> 한 덩어리가 작업 하나 -->
+      <h3 class="sub">참여한 프로젝트</h3>
+      <ul class="works">
+        <li>
+          <a href="https://github.com/tionsoftlab/PhishingGuard">
+            <h3>피싱가드 PhishingGuard</h3>
+            <p>URL·문자·이메일·QR코드·보이스피싱을 AI로 검사하고, 결과를 커뮤니티에서 나누는 보안 서비스예요.</p>
+            <span class="meta"><span class="chip team">팀 프로젝트</span><span class="chip">AI 보안</span><span class="chip">웹 서비스</span></span>
+          </a>
+        </li>
+        <li>
+          <div class="static">
+            <h3>tation</h3>
+            <p>비공개 저장소라 자세한 내용은 생략할게요.</p>
+            <span class="meta"><span class="chip team">팀 프로젝트</span></span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- 만들고 있는 것: 상태 칩은 idea(구상 중) / prep(준비 중) 두 가지 -->
+      <h3 class="sub">만들고 있는 것</h3>
+      <ul class="works">
+        <li>
+          <div class="static">
+            <h3>맥 파일 변환 앱</h3>
+            <p>파일 형식을 간단하게 바꿔 주는 개인용 맥 앱이에요.</p>
+            <span class="meta"><span class="chip idea">구상 중</span><span class="chip">macOS</span></span>
+          </div>
+        </li>
+        <li>
+          <div class="static">
+            <h3>영상 저장 크롬 확장</h3>
+            <p>보고 있는 영상을 바로 저장하는 크롬 확장 프로그램이에요.</p>
+            <span class="meta"><span class="chip idea">구상 중</span><span class="chip">Chrome</span></span>
+          </div>
+        </li>
+        <li>
+          <div class="static">
+            <h3>픽셀 에이전트 사무실</h3>
+            <p>Claude Code가 일하는 모습을 픽셀 캐릭터들이 돌아다니는 사무실로 보여 주는 앱이에요.</p>
+            <span class="meta"><span class="chip idea">구상 중</span><span class="chip">Claude Code</span></span>
+          </div>
+        </li>
+        <li>
+          <div class="static">
+            <h3>마인크래프트 모드 서버</h3>
+            <p>친구들이랑 하는 모드 서버를 24시간 돌리는 프로젝트예요.</p>
+            <span class="meta"><span class="chip prep">준비 중</span><span class="chip">서버</span></span>
+          </div>
+        </li>
+      </ul>
       <!--
-        작업이 생기면 위의 <div class="empty"> 덩어리를 지우고, 아래 예시를 주석 밖으로 꺼내서 쓰면 돼.
-        <ul class="works">
-          <li>
-            <a href="작업 링크">
-              <h3>작업 이름</h3>
-              <p>이게 뭔지 한 줄 설명</p>
-            </a>
-          </li>
-        </ul>
+        작업을 추가하려면 위 <li>부터 </li>까지 한 덩어리를 복사해서 붙이고 글자만 바꾸면 돼.
+        링크가 있는 작업은 <div class="static"> 대신 <a href="링크"> 를 쓰고, 닫는 </div>도 </a>로 바꾸기.
       -->
     </div>
   </section>
