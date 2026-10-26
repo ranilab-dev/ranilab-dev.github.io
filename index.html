@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rani</title>
+<meta name="description" content="쓰고 싶은 걸 직접 만들어 보는 라니의 작업 공간">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237B5CFF'/%3E%3Cstop offset='.5' stop-color='%232E95EA'/%3E%3Cstop offset='1' stop-color='%2312A27C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #FBFBFD;  --bg-alt: #F5F5F7;
+    --ink: #1D1D1F; --muted: #6E6E73; --line: #D2D2D7;
+    /* 이름 그라데이션 색 */
+    --g1: #7B5CFF; --g2: #2E95EA; --g3: #12A27C;
+    /* 관심사 알약 색 (배경 / 글자) */
+    --t1: #EFEAFF; --c1: #5B3FD6;
+    --t2: #E3F2FF; --c2: #1F6FB8;
+    --t3: #DFF7EE; --c3: #0E7A5E;
+    --t4: #FFEDE6; --c4: #B2512D;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000000;  --bg-alt: #1C1C1E;
+      --ink: #F5F5F7; --muted: #A1A1A6; --line: #38383A;
+      --g1: #C4B5FF; --g2: #9AD6FF; --g3: #9BF0D0;
+      --t1: #2A2340; --c1: #D5CBFF;
+      --t2: #1A2C3D; --c2: #B8E2FF;
+      --t3: #16302A; --c3: #B5F3DC;
+      --t4: #3A2620; --c4: #FFCDB8;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+                 "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    background: var(--bg); color: var(--ink);
+    font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; word-break: keep-all;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--g2); outline-offset: 3px; border-radius: 8px; }
+
+  /* 상단 메뉴 */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  }
+  .nav-inner {
+    max-width: 980px; margin: 0 auto; padding: 12px 22px;
+    display: flex; justify-content: space-between; align-items: center; font-size: 14px;
+  }
+  .brand { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { color: var(--muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* 첫 화면 */
+  .hero {
+    min-height: calc(100svh - 49px);
+    display: grid; place-content: center; text-align: center;
+    padding: 64px 22px 96px;
+  }
+  .name {
+    font-size: clamp(96px, 26vw, 260px); font-weight: 800;
+    line-height: 0.9; letter-spacing: -0.06em; padding: 0 0.08em 0.08em;
+    background: linear-gradient(100deg, var(--g1) 10%, var(--g2) 50%, var(--g3) 90%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: rise 1.1s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .tagline {
+    margin-top: 20px; font-size: clamp(19px, 2.4vw, 24px); font-weight: 600; letter-spacing: -0.01em;
+    animation: rise 1.1s .15s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .handle { margin-top: 4px; color: var(--muted); font-size: 15px; animation: rise 1.1s .25s cubic-bezier(.2, .7, .2, 1) both; }
+  .cta {
+    justify-self: center; margin-top: 32px; padding: 12px 24px; border-radius: 980px;
+    background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600; font-size: 15px;
+    animation: rise 1.1s .35s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .cta:hover { opacity: .85; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); filter: blur(12px); }
+    to   { opacity: 1; transform: none; filter: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+
+  /* 아래 구역들 */
+  .block { padding: 96px 22px; }
+  .block.alt { background: var(--bg-alt); }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 18px; }
+  .lead { font-size: 19px; }
+  .muted { color: var(--muted); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding: 0; list-style: none; }
+  .tags li { padding: 8px 16px; border-radius: 980px; font-size: 15px; font-weight: 600; }
+  .tags li:nth-child(4n+1) { background: var(--t1); color: var(--c1); }
+  .tags li:nth-child(4n+2) { background: var(--t2); color: var(--c2); }
+  .tags li:nth-child(4n+3) { background: var(--t3); color: var(--c3); }
+  .tags li:nth-child(4n+4) { background: var(--t4); color: var(--c4); }
+
+  .empty { padding: 44px 28px; border-radius: 28px; border: 1.5px dashed var(--line); text-align: center; }
+  .empty strong { display: block; font-size: 20px; margin-bottom: 4px; }
+
+  /* 작업이 생기면 쓰는 목록 */
+  .works { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+  .works li { border-bottom: 1px solid var(--line); }
+  .works a { display: block; padding: 22px 4px; text-decoration: none; }
+  .works h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.015em; }
+  .works a:hover h3 { color: var(--g1); }
+  .works p { color: var(--muted); margin-top: 2px; }
+
+  .contact-link { font-size: 21px; font-weight: 600; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+  .contact-link:hover { color: var(--g2); }
+
+  footer { padding: 28px 22px 44px; text-align: center; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Rani</a>
+    <nav class="nav-links" aria-label="페이지 메뉴">
+      <a href="#about">소개</a>
+      <a href="#work">작업</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1 class="name">Rani</h1>
+    <!-- 한 줄 소개: 원하는 문장으로 바꾸면 돼 -->
+    <p class="tagline">쓰고 싶은 걸 직접 만들어 보는 중이에요.</p>
+    <p class="handle">@ranilab-dev</p>
+    <a class="cta" href="https://github.com/ranilab-dev">GitHub 보기</a>
+  </section>
+
+  <section class="block alt" id="about">
+    <div class="wrap">
+      <h2>소개</h2>
+      <!-- 자기소개: 네 말투로 바꾸면 돼 -->
+      <p class="lead">영상 편집이랑 테크를 좋아하고, 요즘은 필요한 도구를 코드로 직접 만들어 보고 있어요.
+        불편한 게 보이면 일단 고쳐 보는 편이에요.</p>
+      <!-- 관심사: 항목을 추가하거나 지우면 색은 자동으로 돌아가며 칠해져 -->
+      <ul class="tags" aria-label="관심 분야">
+        <li>영상 편집</li>
+        <li>웹</li>
+        <li>자동화</li>
+        <li>하드웨어</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2>작업</h2>
+      <div class="empty">
+        <strong>첫 작업을 준비하고 있어요</strong>
+        <span class="muted">완성되는 대로 여기에 하나씩 올릴게요.</span>
+      </div>
+      <!--
+        작업이 생기면 위의 <div class="empty"> 덩어리를 지우고, 아래 예시를 주석 밖으로 꺼내서 쓰면 돼.
+        <ul class="works">
+          <li>
+            <a href="작업 링크">
+              <h3>작업 이름</h3>
+              <p>이게 뭔지 한 줄 설명</p>
+            </a>
+          </li>
+        </ul>
+      -->
+    </div>
+  </section>
+
+  <section class="block alt" id="contact">
+    <div class="wrap">
+      <h2>연락</h2>
+      <p class="muted" style="margin-bottom:10px">GitHub에서 저를 찾을 수 있어요.</p>
+      <a class="contact-link" href="https://github.com/ranilab-dev">github.com/ranilab-dev</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Rani</footer>
+
+</body>
+</html>
