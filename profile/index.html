@@ -134,6 +134,33 @@
   .chip.idea { background: var(--t1); color: var(--c1); }
   .chip.prep { background: var(--t3); color: var(--c3); }
   .chip.team { background: var(--t2); color: var(--c2); }
+  .chip.dev { background: var(--t4); color: var(--c4); }
+
+  /* 만들고 있는 앱: 카드 세 장 나란히. 카드를 누르면 그 앱 사이트로 가요 */
+  .apps-wrap { max-width: 980px; margin: 0 auto; }
+  .apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+  .app {
+    position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+    padding: 26px 24px 28px; border-radius: 28px; background: var(--bg-alt); text-decoration: none;
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+  }
+  .app .ic { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 12px; display: grid; place-items: center; font-size: 28px; font-weight: 800; }
+  .app .ic.s { background: var(--t1); color: var(--c1); }
+  .app h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.015em; }
+  .app p { color: var(--muted); font-size: 15px; }
+  .app .meta { margin-top: auto; padding-top: 6px; }   /* 상태 칩은 카드 맨 아래에 줄 맞춰요 */
+  .app :where(.chip) { background: var(--bg); }        /* 회색 카드 위의 기본 칩은 바탕색으로 */
+  .app .go {
+    position: absolute; top: 22px; right: 22px; width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--bg);
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+  }
+  .app .go svg { width: 16px; height: 16px; }
+  @media (hover: hover) {
+    .app:hover { transform: translateY(-4px); }
+    .app:hover .go { transform: translate(2px, -2px); }
+  }
+  @media (max-width: 760px) { .apps { grid-template-columns: 1fr; } }
 
   .contact-link { font-size: 21px; font-weight: 600; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
   .contact-link:hover { color: var(--g2); }
@@ -148,6 +175,7 @@
     <a class="brand" href="#top"><svg class="brand-mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="lgnav" gradientUnits="userSpaceOnUse" x1="30" y1="40" x2="170" y2="175"><stop offset="0" stop-color="#7B5CFF"/><stop offset=".5" stop-color="#2E95EA"/><stop offset="1" stop-color="#12A27C"/></linearGradient></defs><ellipse cx="46" cy="76" rx="18" ry="34" transform="rotate(-62 46 76)" fill="url(#lgnav)"/><ellipse cx="154" cy="76" rx="18" ry="34" transform="rotate(62 154 76)" fill="url(#lgnav)"/><circle cx="100" cy="108" r="62" fill="url(#lgnav)"/><path d="M84 136 L84 80 L101 80 A18 18 0 0 1 101 116 L84 116 M100 116 L118 136" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/></svg>Rani</a>
     <nav class="nav-links" aria-label="페이지 메뉴">
       <a href="#about">소개</a>
+      <a href="#apps">앱</a>
       <a href="#work">작업</a>
       <a href="#contact">연락</a>
     </nav>
@@ -183,7 +211,38 @@
     </div>
   </section>
 
-  <section class="block" id="work">
+  <section class="block" id="apps">
+    <div class="apps-wrap">
+      <h2>만들고 있는 앱</h2>
+      <p class="muted">카드를 누르면 앱 사이트로 가요.</p>
+      <!-- 앱 카드: <a class="app"> 한 덩어리가 앱 하나. 앱 아이콘이 생기면 <span class="ic"> 대신 <img class="ic" src="그림"> -->
+      <div class="apps">
+        <a class="app" href="../ringkat/">
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <img class="ic" src="ringkat.png" alt="" width="64" height="64">
+          <h3>Ringkat 링캣</h3>
+          <p>파일을 끌다가 Shift를 누르면 커서 옆에 동그란 메뉴가 떠요. 칸에 놓으면 원본 옆에 변환된 파일이 생겨요.</p>
+          <span class="meta"><span class="chip dev">개발 중</span><span class="chip">macOS</span><span class="chip">Windows</span></span>
+        </a>
+        <a class="app" href="../peekat/">
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <img class="ic" src="peekat.png" alt="" width="64" height="64">
+          <h3>Peekat 피캣</h3>
+          <p>Claude Code가 일하는 동안 화면 위에서 하는 일과 쓴 토큰을 보여줘요.</p>
+          <span class="meta"><span class="chip prep">출시 준비 중</span><span class="chip">macOS</span><span class="chip">Windows</span></span>
+        </a>
+        <a class="app" href="../synkat/">
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="ic s" aria-hidden="true">S</span>
+          <h3>Synkat 싱캣</h3>
+          <p>같은 Wi-Fi의 맥과 윈도우 사이에서 클립보드를 1초 안에 주고받아요.</p>
+          <span class="meta"><span class="chip dev">개발 중</span><span class="chip">macOS</span><span class="chip">Windows</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="work">
     <div class="wrap">
       <h2>작업</h2>
 
@@ -209,13 +268,6 @@
       <!-- 만들고 있는 것: 상태 칩은 idea(구상 중) / prep(준비 중) 두 가지 -->
       <h3 class="sub">만들고 있는 것</h3>
       <ul class="works">
-        <li>
-          <div class="static">
-            <h3>맥 파일 변환 앱</h3>
-            <p>파일 형식을 간단하게 바꿔 주는 개인용 맥 앱이에요.</p>
-            <span class="meta"><span class="chip idea">구상 중</span><span class="chip">macOS</span></span>
-          </div>
-        </li>
         <li>
           <div class="static">
             <h3>영상 저장 크롬 확장</h3>
@@ -245,7 +297,7 @@
     </div>
   </section>
 
-  <section class="block alt" id="contact">
+  <section class="block" id="contact">
     <div class="wrap">
       <h2>연락</h2>
       <p class="muted" style="margin-bottom:10px">GitHub에서 저를 찾을 수 있어요.</p>
