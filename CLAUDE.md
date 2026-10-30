@@ -36,7 +36,10 @@
 - 카드는 앱 사이트 최종 주소(../ringkat/, ../peekat/, ../synkat/)로 가. 앱이 출시되기 전엔 눌러도 404야.
 - 상태 칩: chip prep(준비 중 · 출시 준비 중), chip dev(개발 중).
 - 링캣 카드의 한 줄 소개는 비공개 저장소 Ringkat-src 의 website/SITE.md 1장 "한 줄 소개"에서 가져왔어. 그 파일의 내부 메모(0장 등)는 사이트에 옮기지 마.
-- 아이콘: 피캣은 profile/peekat.png (피캣 저장소 docs/icon.png 복사본), 링캣은 profile/ringkat.png (Ringkat-src 의 website/icon.png 를 256px로 줄인 것). 싱캣은 아이콘이 생기기 전까지 글자(S) 칸이야. 아이콘이 생기면 span class="ic s" 대신 img class="ic".
+- 아이콘 (모두 256px PNG, 앱 아이콘이 바뀌면 같은 이름으로 덮어써):
+  - 피캣 profile/peekat.png: 피캣 저장소 docs/icon.png 복사본
+  - 링캣 profile/ringkat.png: Ringkat-src 의 website/icon.png 를 줄인 것
+  - 싱캣 profile/synkat.png: 설치된 Synkat 앱의 AppIcon.icns 를 PNG로 바꿔 줄인 것 (싱캣 아이콘은 Synkat 코드 src/icon.rs 가 그려요)
 
 ## 지켜야 할 것
 

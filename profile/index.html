@@ -144,8 +144,7 @@
     padding: 26px 24px 28px; border-radius: 28px; background: var(--bg-alt); text-decoration: none;
     transition: transform .4s cubic-bezier(.2, .7, .2, 1);
   }
-  .app .ic { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 12px; display: grid; place-items: center; font-size: 28px; font-weight: 800; }
-  .app .ic.s { background: var(--t1); color: var(--c1); }
+  .app .ic { width: 64px; height: 64px; margin-bottom: 12px; }
   .app h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.015em; }
   .app p { color: var(--muted); font-size: 15px; }
   .app .meta { margin-top: auto; padding-top: 6px; }   /* 상태 칩은 카드 맨 아래에 줄 맞춰요 */
@@ -215,7 +214,7 @@
     <div class="apps-wrap">
       <h2>만들고 있는 앱</h2>
       <p class="muted">카드를 누르면 앱 사이트로 가요.</p>
-      <!-- 앱 카드: <a class="app"> 한 덩어리가 앱 하나. 앱 아이콘이 생기면 <span class="ic"> 대신 <img class="ic" src="그림"> -->
+      <!-- 앱 카드: <a class="app"> 한 덩어리가 앱 하나. 아이콘은 이 폴더의 256px PNG (<img class="ic">) -->
       <div class="apps">
         <a class="app" href="../ringkat/">
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
@@ -233,7 +232,7 @@
         </a>
         <a class="app" href="../synkat/">
           <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-          <span class="ic s" aria-hidden="true">S</span>
+          <img class="ic" src="synkat.png" alt="" width="64" height="64">
           <h3>Synkat 싱캣</h3>
           <p>같은 Wi-Fi의 맥과 윈도우 사이에서 클립보드를 1초 안에 주고받아요.</p>
           <span class="meta"><span class="chip dev">개발 중</span><span class="chip">macOS</span><span class="chip">Windows</span></span>

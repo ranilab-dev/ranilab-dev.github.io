@@ -7,7 +7,7 @@ Rani의 포트폴리오 사이트예요. 주소: https://ranilab-dev.github.io/p
 | 파일 | 내용 |
 | --- | --- |
 | profile/index.html | 프로필 전체. 글, 디자인, 캐릭터, 앱 카드가 이 파일 하나에 다 들어 있어요 |
-| profile/peekat.png, profile/ringkat.png | 앱 카드에 쓰는 피캣 · 링캣 아이콘 |
+| profile/peekat.png, profile/ringkat.png, profile/synkat.png | 앱 카드에 쓰는 피캣 · 링캣 · 싱캣 아이콘 |
 | index.html | 맨 위 주소로 오면 프로필로 넘겨주는 짧은 파일 |
 | rani-avatar.svg | 고라니 캐릭터 원본 |
 | rani-logo.svg | 로고 원본 |
