@@ -3,6 +3,12 @@
 이 저장소는 GitHub Pages로 배포되는 정적 사이트야. main에 push하면 1~2분 뒤 https://ranilab-dev.github.io 에 반영돼.
 프로필은 https://ranilab-dev.github.io/profile/ 이고, 맨 위 주소(/)로 오면 프로필로 자동으로 넘어가.
 
+## 핸드오프 (claude-mem 대신)
+
+- 이 저장소에서는 claude-mem을 꺼 뒀어 (`.claude/settings.json`, 2026-11-04 주인 결정 "1. A").
+- 세션을 시작하면 `~/Developer/Session-Control/맥-상태.md` 맨 위 "지금 상태"부터 읽어. 윈도우와 주고받는 건 같은 저장소 `HANDOFF.md`.
+- 작업 하나가 끝날 때마다 `맥-상태.md`의 "지금 상태"를 고치고, 긴 내용은 아래 "기록"에 날짜와 같이 덧붙여서 push해.
+
 ## 사용자
 
 - 코딩 초보야. 바꾼 내용은 쉬운 한국어로 짧게 설명해줘.
