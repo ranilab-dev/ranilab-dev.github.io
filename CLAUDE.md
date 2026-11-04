@@ -21,10 +21,8 @@
 - 외부 리소스는 Pretendard 폰트 CSS(jsDelivr) 하나만 써.
 - rani-avatar.svg, rani-logo.svg는 원본 그림이고, 프로필 안의 캐릭터·로고와 같은 그림이야.
 - 앱 사이트(/peekat, /synkat, /ringkat)는 이 저장소에 없어. 각 앱 저장소에서 만들고, 출시 때 그 앱의 공개 저장소 docs/ 폴더로 같은 주소에 떠. 이 저장소에 peekat/ 같은 폴더를 만들면 주소가 겹치니까 만들지 마.
-  - 피캣 사이트 원본: 비공개 저장소 peekat-src 의 site/ (미리 보기 https://ranilab-dev.github.io/peekat-src/)
-  - 링캣 사이트 원본: 비공개 저장소 Ringkat-src 의 site/ (미리 보기 https://ranilab-dev.github.io/Ringkat-src/)
-  - 싱캣 사이트 원본: 비공개 저장소 Synkat-src (2026-11-05에 Synkat에서 이름 바꿈, 미리 보기 https://ranilab-dev.github.io/Synkat-src/)
-- 미리 보기 프로필: 비공개 저장소 profile-src (로컬 ~/Developer/profile-src). 이 저장소 profile/ 을 그대로 가져와서 앱 카드 링크만 위 미리 보기 주소로 바꿔 https://ranilab-dev.github.io/profile-src/ 에 올려. 매일 새벽 3시(한국 시간)에 저절로 돌아. 사본이 없으니 내용은 여기 profile/ 만 고치면 돼.
+  - 각 앱 사이트 원본(비공개 저장소)과 미리 보기 주소는 `맥-상태.md`의 "세 앱 미리 보기 사이트"에 있어.
+- 미리 보기 프로필: 비공개 저장소가 이 저장소 profile/ 을 그대로 가져와서 앱 카드 링크만 미리 보기 주소로 바꿔 올려. 매일 새벽 3시(한국 시간)에 저절로 돌아. 사본이 없으니 내용은 여기 profile/ 만 고치면 돼. 저장소 이름과 주소는 `맥-상태.md`에.
 
 ## 디자인 규칙
 
@@ -43,18 +41,19 @@
 
 - 자기소개 바로 아래 "만들고 있는 앱"의 a class="app" 한 덩어리가 앱 하나야. 순서는 링캣, 피캣, 싱캣.
 - 카드는 앱 사이트 최종 주소(../ringkat/, ../peekat/, ../synkat/)로 가. 앱이 출시되기 전엔 눌러도 404야.
-- 카드 링크(href)를 바꾸면 profile-src 의 .github/workflows/preview.yml 의 swap 줄도 같이 고쳐. 안 고치면 미리 보기 올리기가 멈춰 (404 링크로 올라가는 걸 막으려고 일부러 그렇게 해 뒀어).
+- 카드 링크(href)를 바꾸면 미리 보기 프로필 저장소의 .github/workflows/preview.yml 의 swap 줄도 같이 고쳐. 안 고치면 미리 보기 올리기가 멈춰 (404 링크로 올라가는 걸 막으려고 일부러 그렇게 해 뒀어).
 - 상태 칩: chip prep(준비 중 · 출시 준비 중), chip dev(개발 중).
-- 링캣 카드의 한 줄 소개는 비공개 저장소 Ringkat-src 의 website/SITE.md 1장 "한 줄 소개"에서 가져왔어. 그 파일의 내부 메모(0장 등)는 사이트에 옮기지 마.
+- 링캣 카드의 한 줄 소개는 링캣 비공개 저장소의 website/SITE.md 1장 "한 줄 소개"에서 가져왔어. 그 파일의 내부 메모(0장 등)는 사이트에 옮기지 마.
 - 아이콘 (모두 256px PNG, 앱 아이콘이 바뀌면 같은 이름으로 덮어써):
   - 피캣 profile/peekat.png: 피캣 저장소 docs/icon.png 복사본
-  - 링캣 profile/ringkat.png: Ringkat-src 의 website/icon.png 를 줄인 것
+  - 링캣 profile/ringkat.png: 링캣 비공개 저장소의 website/icon.png 를 줄인 것
   - 싱캣 profile/synkat.png: 설치된 Synkat 앱의 AppIcon.icns 를 PNG로 바꿔 줄인 것 (싱캣 아이콘은 Synkat 코드 src/icon.rs 가 그려요)
 
 ## 지켜야 할 것
 
 - 본명, 학교, 사는 지역, 개인 이메일(네이버·학교)은 사이트와 커밋 어디에도 넣지 마.
 - tation은 비공개 저장소라 내용을 추가하지 마.
+- 이 저장소는 공개라서 CLAUDE.md·README.md도 GitHub에서 누구나 볼 수 있어 (사이트에는 _config.yml로 안 띄워). 비공개 저장소 이름과 미리 보기 주소는 여기 쓰지 말고 `맥-상태.md`에 적어.
 - 내용을 지우거나 크게 바꾸기 전에는 먼저 물어봐.
 - 커밋 작성자는 항상 Rani와 noreply 메일이어야 해. 커밋 전에 확인하고, 다르면 이 저장소에만 설정해:
 
@@ -67,4 +66,4 @@
 2. 수정한 뒤 브라우저로 profile/index.html을 열어서 라이트, 다크, 모바일 폭 확인
 3. git add, git commit -m "무엇을 바꿨는지 한국어로", git push
 4. 1~2분 뒤 사이트에서 반영됐는지 확인
-5. profile/ 을 고쳤으면 미리 보기 프로필도 바로 반영: `gh workflow run preview.yml -R ranilab-dev/profile-src` (안 해도 다음 날 새벽 3시에 반영돼)
+5. profile/ 을 고쳤으면 미리 보기 프로필도 바로 반영 (명령은 `맥-상태.md`에 있어. 안 해도 다음 날 새벽 3시에 반영돼)

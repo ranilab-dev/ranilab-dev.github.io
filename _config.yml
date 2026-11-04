@@ -1,0 +1,4 @@
+# GitHub Pages 설정. 사이트에 띄우지 않을 파일만 적어요 (저장소에는 그대로 있어요).
+exclude:
+  - CLAUDE.md
+  - README.md
