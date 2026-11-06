@@ -19,7 +19,7 @@
 - profile/index.html 하나에 HTML, CSS, 로고 SVG가 다 들어 있어. 캐릭터만 profile/rani.png 그림 한 장이야. 빌드 도구, 프레임워크, npm 없음. 이 구조를 유지해.
 - 맨 위 index.html은 프로필로 넘겨주기만 하는 짧은 파일이야. 내용은 profile/index.html에 써.
 - 외부 리소스는 Pretendard 폰트 CSS(jsDelivr) 하나만 써.
-- rani-avatar.png(캐릭터, 배경 투명, 줄이지 않은 크기)와 rani-logo.svg(로고)는 원본 그림이고, 프로필 안의 캐릭터·로고와 같은 그림이야. 캐릭터를 바꾸면 원본을 고친 뒤 480px로 줄여서 profile/rani.png에 덮어써. 옛 캐릭터 rani-avatar.svg는 지금 안 써.
+- rani-avatar.png(캐릭터, 배경 투명, 줄이지 않은 크기)와 rani-logo.svg(로고)는 원본 그림이고, 프로필 안의 캐릭터·로고와 같은 그림이야. 캐릭터를 바꾸면 원본을 고친 뒤 480px로 줄여서 profile/rani.png에 덮어써.
 - 앱 사이트(/peekat, /synkat, /ringkat)는 이 저장소에 없어. 각 앱 저장소에서 만들고, 출시 때 그 앱의 공개 저장소 docs/ 폴더로 같은 주소에 떠. 이 저장소에 peekat/ 같은 폴더를 만들면 주소가 겹치니까 만들지 마.
   - 각 앱 사이트 원본(비공개 저장소)과 미리 보기 주소는 `맥-상태.md`의 "세 앱 미리 보기 사이트"에 있어.
 - 미리 보기 프로필: 비공개 저장소가 이 저장소 profile/ 을 그대로 가져와서 앱 카드 링크만 미리 보기 주소로 바꿔 올려. 매일 새벽 3시(한국 시간)에 저절로 돌아. 사본이 없으니 내용은 여기 profile/ 만 고치면 돼. 저장소 이름과 주소는 `맥-상태.md`에.
