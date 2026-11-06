@@ -6,11 +6,12 @@ Rani의 포트폴리오 사이트예요. 주소: https://ranilab-dev.github.io/p
 
 | 파일 | 내용 |
 | --- | --- |
-| profile/index.html | 프로필 전체. 글, 디자인, 캐릭터, 앱 카드가 이 파일 하나에 다 들어 있어요 |
+| profile/index.html | 프로필 전체. 글, 디자인, 로고, 앱 카드가 이 파일 하나에 들어 있어요 (캐릭터 그림만 따로 rani.png) |
+| profile/rani.png | 첫 화면의 연두 아기 고라니 캐릭터 (원본을 480px로 줄인 것) |
 | profile/peekat.png, profile/ringkat.png, profile/synkat.png | 앱 카드에 쓰는 피캣 · 링캣 · 싱캣 아이콘 |
 | index.html | 맨 위 주소로 오면 프로필로 넘겨주는 짧은 파일 |
-| rani-avatar.svg | 고라니 캐릭터 원본 |
-| rani-logo.svg | 로고 원본 |
+| rani-avatar.png | 고라니 캐릭터 원본 (배경 투명, 줄이지 않은 크기) |
+| rani-logo.svg | 로고 원본 (민트·연두 R 배지) |
 | CLAUDE.md | Claude Code가 이 사이트를 고칠 때 따르는 규칙 |
 
 앱 사이트(/peekat, /synkat, /ringkat)는 이 저장소가 아니라 각 앱 저장소에서 만들어요.
